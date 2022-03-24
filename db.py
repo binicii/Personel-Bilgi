@@ -21,25 +21,24 @@ class Database:
         self.cur.execute(sql)
         self.con.commit()
 
-    # Insert Function
+    
     def insert(self, name, age, surname, email, gender, contact, tc, city):
         self.cur.execute("insert into employees values (NULL,?,?,?,?,?,?,?,?)",
                          (name, age, surname, email, gender, contact, tc, city))
         self.con.commit()
 
-    # Fetch All Data from DB
+
     def fetch(self):
         self.cur.execute("SELECT * from employees")
         rows = self.cur.fetchall()
         # print(rows)
         return rows
 
-    # Delete a Record in DB
+
     def remove(self, id):
         self.cur.execute("delete from employees where id=?", (id,))
         self.con.commit()
 
-    # Update a Record in DB
     def update(self, id, name, age, surname, email, gender, contact, tc, city):
         self.cur.execute(
             "update employees set name=?, age=?, surname=?, email=?, gender=?, contact=?, tc=?, city=? where id=?",
