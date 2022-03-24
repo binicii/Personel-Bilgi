@@ -19,7 +19,6 @@ contact = StringVar()
 tc = StringVar()
 city = StringVar()
 
-# Entries Frame
 entries_frame = Frame(root, bg="#46244C")
 entries_frame.pack(side=TOP, fill=X)
 title = Label(entries_frame, text="Personel Özlük Bilgileri", font=("Calibri", 18, "bold"), bg="#46244C", fg="white")
@@ -150,13 +149,12 @@ btnClear = Button(btn_frame, command=clearAll, text="Temizle", width=15, font=("
                   bg="#f39c12",
                   bd=0).grid(row=0, column=3, padx=10)
 
-# Table Frame
 tree_frame = Frame(root, bg="#ecf0f1")
 tree_frame.place(x=0, y=350, width=1500, height=520)
 style = ttk.Style()
 style.configure("mystyle.Treeview", font=('Calibri', 13),
-                rowheight=50)  # Modify the font of the body
-style.configure("mystyle.Treeview.Heading", font=('Calibri', 13))  # Modify the font of the headings
+                rowheight=50)  
+style.configure("mystyle.Treeview.Heading", font=('Calibri', 13))  
 tv = ttk.Treeview(tree_frame, columns=(1, 2, 3, 4, 5, 6, 7, 8,9), style="mystyle.Treeview")
 tv.heading("1", text="ID")
 tv.column("1", width=2)
